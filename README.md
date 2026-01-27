@@ -2,7 +2,7 @@
 
 A Progressive Web App (PWA) for Ranger Challenge / EIB / ESB training. Study standards, track your progress, and prepare for competition — all from your phone, **no app store required**.
 
-![RC PRO Screenshot](ranger-challenge/icons/icon-192.png)
+
 
 ## ✨ Features
 
