@@ -1,0 +1,119 @@
+FILE: Asip_Radio_Setup_—_Quick_Handout__cst_Video_Transcript_.pdf
+============================================================
+
+--- Page 1 ---
+ASIP Radio Setup — Quick Handout (CST Video
+Transcript)
+Scope. This handout distills the provided video transcript into a step‑by‑step setup/check
+guide for an ASIP (AN/PRC‑119 series) at CST. It covers battery, antenna, handset (mic), and
+basic plaintext single‑channel programming.
+What you need on hand
+Radio body
+Battery
+Antenna (whip)
+Handset/Mic
+Battery check: Use the notch/indicator on the battery to gauge remaining charge. Even if it
+reads 14–20 hours, request/bring spares so comms don’t die during CST.
+1) Install the battery
+Lift the battery latch; twist to free; open the battery door.
+Align the small battery plug with the matching receptacle and fully seat it (same side orientation
+per the transcript).
+Re‑seat the battery pack: hook the far side first, ensure it pops in and sits flat. Do not force it.
+Press the door down, rotate the latch toward the open area until you feel resistance, then lock. The
+door should sit flush and not spring up.
+Quick check: With a good seat, the door resists upward pressure and the latch holds without wobble.
+2) Attach antenna and handset (mic)
+Antenna
+Place the antenna base squarely on the antenna port.
+Thread/screw until snug—no wobble.
+Handset/Mic
+Open the audio port cover.
+Align handset connector; press straight down to fully seat the gasket.
+Rotate counter‑clockwise (as shown in the transcript) until it locks. Tug test: lift gently—the
+connector should not pop off.
+• 
+• 
+• 
+• 
+1. 
+2. 
+3. 
+4. 
+1. 
+2. 
+1. 
+2. 
+3. 
+1
+
+--- Page 2 ---
+RTO tip: Verify antenna and mic are  tight. If your site allows, tape strain‑relief on cable/
+antenna to prevent flopping/snags while moving.
+3) Power up and enter LOAD mode
+From OFF, rotate the function knob to LD (LOAD).
+Wait for the display (e.g., WAIT, then NO KEY). You’ll use MENU/CLEAR to scroll.
+4) Basic settings (plaintext, single‑channel)
+Use MENU/CLEAR to cycle, number keys to set values, CHANGE where applicable.
+VOL: Press a number 1–9 to set volume (you’ll hear a beep).
+CHAN: Set Channel.
+PWR: Press CHANGE → 7 to set HIGH if needed; otherwise leave LOW.
+MODE: Set to Single Channel (not Frequency Hop).
+COMSEC: Set to PT (Plain Text).
+You should hear tone/ringing stop once you’re on the correct net in PT.
+5) Enter the operating frequency
+Press FREQ.
+Press MENU/CLEAR to ready the entry.
+Enter the 5‑digit frequency (keyed as 50000).
+Press STO (STORE) to save.
+Verify your earlier settings: PWR, MODE = SC, CHAN = 1, COMSEC = PT.
+6) Place the radio ON and check
+Rotate from LD to ON.
+Use SQ (squelch) as needed and perform a quick radio check on the assigned net.
+If no audio/handset issues: Re‑seat the audio connector (press straight down, lock), confirm antenna tight,
+confirm PT / SC and correct frequency.
+7) Disassembly (reverse order)
+Rotate from ON to Z (to clear), then to OFF.
+Remove handset: unlock and pull straight off; close audio port cover.
+1. 
+2. 
+• 
+• 
+• 
+• 
+• 
+1. 
+2. 
+3. 
+4. 
+5. 
+1. 
+2. 
+1. 
+2. 
+2
+
+--- Page 3 ---
+Remove antenna; stow safely (tape if needed to avoid flopping).
+Remove battery: lift latch, rotate, lift door, disconnect plug; re‑install door so nothing is lost.
+Goal: Don’t lose components. Turn‑in with radio, antenna, mic, and battery accounted for.
+Quick Troubleshooting (from transcript cues)
+Mic pops off: It wasn’t locked—seat fully, then rotate to lock; tug test.
+No RX/TX in PT: Verify MODE = Single Channel, COMSEC = PT, CHAN = 1, correct FREQ stored.
+Weak/No power: Swap battery; ensure latch is locked and door is flush.
+Floppy antenna/cable: Tighten and consider tape for movement.
+Pocket Card (Cut‑Out)
+1 Battery: plug → seat → latch lock
+2 Antenna: seat → thread snug
+3 Handset: seat → rotate to lock (tug test)
+4 LD (LOAD): wait for display
+5 Settings: VOL → CH1 → PWR (L/H) → MODE SC → COMSEC PT
+6 FREQ: FREQ → MENU/CLEAR → 5 digits → STO
+7 ON: SQ as needed → Radio check
+8 Shutdown: ON→Z→OFF → remove mic/ant/battery → stow
+3. 
+4. 
+• 
+• 
+• 
+• 
+3

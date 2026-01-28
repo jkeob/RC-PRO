@@ -1,0 +1,256 @@
+FILE: 9‑line_Medevac_—_Instructor_Handout___Student_Worksheet.pdf
+============================================================
+
+--- Page 1 ---
+9‑Line MEDEVAC (Instructor Handout & Student
+Worksheet)
+NO‑GO: Candidate cannot send Lines 1–9 within the standard, uses wrong brevity codes, or
+transmits out of sequence/procedure (absent equipment failure).
+Purpose. A 9‑Line MEDEVAC rapidly requests medical evacuation and communicates pickup details, patient
+status, and site conditions.
+Call Flow — Quick Reference
+Prep: Build Lines 1–9 from TCCC cards.
+Initial Contact (Lines 1–5 on MEDEVAC freq):
+"[Higher], this is [Your Call Sign], 9-Line to follow, over."
+Send Lines 1–5, then state “Over.”
+Send Lines 6–9
+Close: “Over.”
+Standards: Prepare within \~3 min; transmit  Lines 1–5 within \~25 sec of initial contact;
+transmit Lines 6–9 within \~1 min thereafter. Use proper brevity codes, RT procedures, and
+pronunciation.
+9‑Line Format (with Examples)
+Line 1 — Pickup Location (MGRS). 6‑digit grid (MINIMUM) with GZD, accurate ≤200 m. 
+Example (Line 1): Grid 16T EG 1234 5678;
+Line 2 — Radio Freq, Call Sign & Suffix. Operational frequency you’ll use for follow‑on; include your call
+sign/suffix.
+Example (Line 2): Call sign VIKING 2‑1, Freq 38900.
+Line 3 — Patients by Precedence (state number per category; say “Break” between).
+A # — Urgent
+B # — Urgent‑Surgical
+C # — Priority
+D # — Routine
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+• 
+• 
+• 
+• 
+1
+
+--- Page 2 ---
+E # — Convenience
+Example (Line 3): 2A, Break, 1C.
+Line 4 — Special Equipment Required.
+A — None
+B — Hoist
+C — Extrication equipment
+D — Ventilator
+Example (Line 4): A.
+Line 5 — Patients by Type (say “Break” between).
+L # — Litter
+A # — Ambulatory
+Example (Line 5): 1L, Break, 2A.
+_____
+"Over."
+Line 6 — Security at Pickup Site (wartime).
+N — No enemy in area
+P — Possible enemy in area
+E — Enemy in area
+X — Enemy in area (armed escort required)
+Example (Line 6): P.
+Line 7 — Marking Method for Pickup Site.
+A — Panels
+B — Pyrotechnic signal
+C — Smoke
+D — None
+E — Other
+Example (Line 7): C (Green).
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+2
+
+--- Page 3 ---
+Line 8 — Patient Nationality & Status.
+A — U.S. military
+B — U.S. civilian
+C — Non‑U.S. military
+D — Non‑U.S. civilian
+E — Enemy POW
+Example (Line 8): 2A, 1D.
+Line  9  —  Terrain  (peacetime)  /  NBC  (as  directed). Provide  pertinent  terrain  description (slope,
+obstacles, LZ hazards, approach). In a non‑CBRNE wartime lane, terrain is acceptable and often expected.
+Example (Line 9): Flat 100×100 meter dirt lot; wires on west edge; best approach from east.
+Radio Script — Example
+"DUSTOFF 3, this is VIKING 1‑6, 9-Line request to follow, over."
+DUSTOFF: "VIKING 2‑1, send it, over."
+Line 1: "16T EG 1234 5678"
+Line 2: "VIKING 2‑1, 38900."
+Line 3: "2A, Break, 1C."
+Line 4: "A."
+Line 5: "1L, Break, 2A."
+"Over."
+DUSTOFF: "VIKING 2‑1, send Lines 6 through 9, over."
+Line 6: "P."
+Line 7: "C (Green)."
+Line 8: "2A, 1D."
+Line 9: "Flat 100×100 meter dirt lot; wires west; approach east."
+"Over."
+Tips for Students
+Build Lines 1–5 first from map/TCCC cards; rehearse brevity codes out loud.
+For Lines 3 & 5, say numbers first (e.g., “2A, Break, 1C”).
+Line 6: give the single‑letter code; don’t narrate the threat picture unless asked.
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+3
+
+--- Page 4 ---
+Line 7: state method and color if smoke/pyro is used (e.g., “C, green”).
+Line 9: keep it LZ‑useful (size, slope, obstacles, wires, approach).
+Speak once, clearly; use pro‑words; avoid filler.
+Common Errors → Fix
+Missing GZD / bad grid (Line 1): Re‑center protractor; sanity‑check with terrain.
+Wrong order/omissions: Keep a laminated 9‑blank‑line pad; tick each line as you send it.
+Mixing narrative into coded lines: Codes only unless amplifying guidance is requested.
+Forgetting to state “Break” where required (Lines 3 & 5).
+Student Worksheet (Fill‑In)
+MEDEVAC Request (Initial / Update #__ )
+Line 1 (Pickup MGRS + GZD): __________________________________________ Feature: ______________________
+Line 2 (Freq / Call Sign & Suffix): ______________________________________
+Line 3 (Precedence): A __ B __ C __ D __ E __ (say “Break” between)
+Line 4 (Equipment): A B C D → Circle one
+Line 5 (Type): L __ A __ (say “Break” between)
+Line 6 (Security): N / P / E / X → Circle one
+Line 7 (Marking): A / B / C / D / E → Circle one Color/Details: ______________
+Line 8 (Nationality/Status): A __ B __ C __ D __ E __
+Line 9 (Terrain / Hazards / Approach): ________________________________________________
+Practice Lanes — Situation Paragraphs (EIB‑Style)
+Use these injects to build a full 9‑Line. Keep codes short and Line 9 terrain concise.
+Lane 1 — IED Blast, Two WIA
+Convoy struck by a small IED near a dry creek bed. One Soldier with shrapnel wounds to thigh (controlled
+bleeding),  another  with  suspected  concussion  (dazed,  vomiting).  No  contact  observed,  but  locals  are
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+4
+
+--- Page 5 ---
+gathering. Terrain is flat, dusty lot with light poles and low wires to the west; solid approach from the east.
+You have green smoke and a panel available.
+Lane 2 — Heat Casualty, Ambulatory
+During a ruck, one Soldier collapses from heat stress but recovers after cooling and fluids; ambulatory with
+assistance. No enemy indicators. Open field LZ 60×60 m, slight slope south‑to‑north, no wires. You can mark
+with orange panel; pyro not authorized.
+Lane 3 — Complex Terrain, Hoist Required
+Patrol in steep ravine; one Soldier suffers ankle fracture (litter) and another mild laceration (ambulatory).
+Movement to ridge is unsafe without hoist. Unknown enemy presence; earlier reports of sporadic small
+arms 5 km north. Best mark is purple smoke; tree canopy near LZ and boulders along approach.
+Lane 4 — Contact Likely, Armed Escort
+Following a TIC 30 minutes ago, one casualty with penetrating chest trauma (urgent‑surgical) and one with
+arm fracture (priority). Enemy scouts reported in vicinity; armed escort recommended. LZ is a hard‑packed
+road segment, 40×70 m, berms on both sides; wires cross 30 m west of midpoint. Red pyro available.
+Lane 5 — Urban Courtyard
+Partnered patrol in urban district; non‑U.S. civilian vendor struck by debris, bleeding from scalp (priority).
+No active threat; crowd compliant. Courtyard 50×50 m with trees on north edge; best approach from south;
+able to throw green smoke over wall on call.
+Answer Key — Sample 9‑Lines (Instructor
+Reference)
+Note: DTGs/MGRS are placeholders; adjust to your lane map. State “Break” where required.
+Lane 1 — IED Blast
+1: 16T EG 123 456; north end dry creek bed
+2: VIKING 2‑1, 38900
+3: 1A, Break, 1C
+4: A
+5: 1L, Break, 1A
+"Over."
+6: P
+7: C (Green)
+8: 2A
+9: Flat 50×50 m, wires west, approach east
+Lane 2 — Heat Casualty
+1: 16T EG 118 563;
+2: VIKING 2‑1,38900
+5
+
+--- Page 6 ---
+3: 1D
+4: A
+5: 1A
+"Over."
+6: N
+7: A (Panel)
+8: 1A
+9: 60×60 m, slight slope S→N, no wires
+Lane 3 — Hoist Required
+1: 16T EG 110 531;
+2: VIKING 2‑1,38900
+3: 1B, Break, 1C
+4: B (Hoist)
+5: 1L, Break, 1A
+"Over."
+6: P
+7: C (Purple)
+8: 2A
+9: Steep slopes; trees; boulders near LZ; approach from ridgeline east
+Lane 4 — Armed Escort
+1: 16T EG 160 540;
+2: VIKING 2‑1, 38900
+3: 1B, Break, 1C
+4: A
+5: 1L, Break, 1A
+"Over."
+6: X (Armed escort required)
+7: B (Red pyro)
+8: 2A
+9: 40×70 m hard‑pack; berms both sides; wires 30 m W; best approach S→N
+Lane 5 — Urban Courtyard
+1: 16T EG 155 557;
+2: VIKING 2‑1, 38900
+3: 1C
+4: A
+5: 1A
+"Over."
+6: N
+7: C (Green)
+6
+
+--- Page 7 ---
+8: 1D
+9: 50×50 m with trees north; approach from south
+7
