@@ -212,8 +212,23 @@ class RangerChallengeApp {
         <h2 class="detail-title">${task.title}</h2>
         <div class="detail-meta">
           <span class="detail-badge time">⏱ ${task.timeStandard}</span>
+          ${task.taskBasis ? `<span class="detail-badge">📋 ${task.taskBasis}</span>` : ''}
         </div>
       </div>
+
+      ${task.conditions ? `
+        <div class="detail-section">
+          <h3 class="detail-section-title">Conditions</h3>
+          <p>${task.conditions}</p>
+        </div>
+      ` : ''}
+
+      ${task.standards ? `
+        <div class="detail-section">
+          <h3 class="detail-section-title">Standards</h3>
+          <p>${task.standards}</p>
+        </div>
+      ` : ''}
 
       ${task.noGoCriteria ? `
         <div class="no-go-warning">
@@ -287,7 +302,7 @@ class RangerChallengeApp {
       `;
     }
 
-    // Three Transmissions (CFF)
+    // Three Transmissions (old format - keep for backwards compatibility)
     if (learn.threeTransmissions) {
       html += `
         <div class="detail-section">
@@ -307,6 +322,77 @@ class RangerChallengeApp {
       `;
     }
 
+    // Overview (CFF)
+    if (learn.overview) {
+      html += `
+        <div class="detail-section">
+          <h3 class="detail-section-title">📋 Overview — The CFF Process</h3>
+          <ol class="step-list">
+            ${learn.overview.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+      `;
+    }
+
+    // Transmission Details (new CFF format)
+    if (learn.transmissionDetails) {
+      const td = learn.transmissionDetails;
+      html += `
+        <div class="detail-section">
+          <h3 class="detail-section-title">${td.first.title}</h3>
+          <ul class="element-list">
+            ${td.first.elements.map(e => `<li>${e}</li>`).join('')}
+          </ul>
+          <div class="examples-box">
+            <div class="example"><strong>Grid:</strong> <code>${td.first.gridExample}</code></div>
+            <div class="example"><strong>Polar:</strong> <code>${td.first.polarExample}</code></div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3 class="detail-section-title">${td.second.title}</h3>
+          <ul class="element-list">
+            ${td.second.elements.map(e => `<li>${e}</li>`).join('')}
+          </ul>
+          <div class="examples-box">
+            <div class="example"><strong>Grid:</strong> <code>${td.second.gridExample}</code></div>
+            <div class="example"><strong>Polar:</strong> <code>${td.second.polarExample}</code></div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3 class="detail-section-title">${td.third.title}</h3>
+          <ul class="element-list">
+            ${td.third.elements.map(e => `<li>${e}</li>`).join('')}
+          </ul>
+          <div class="example"><strong>Example:</strong> <code>${td.third.example}</code></div>
+        </div>
+      `;
+    }
+
+    // MTO Example
+    if (learn.mtoExample) {
+      html += `
+        <div class="detail-section mto-section">
+          <h3 class="detail-section-title">📞 Message To Observer (MTO)</h3>
+          <p>${learn.messageToObserver}</p>
+          <div class="example mto-example"><code>${learn.mtoExample}</code></div>
+        </div>
+      `;
+    }
+
+    // Effects Options
+    if (learn.effectsOptions) {
+      html += `
+        <div class="detail-section">
+          <h3 class="detail-section-title">📊 Battle Damage Assessment (Effects)</h3>
+          <ul class="element-list">
+            ${learn.effectsOptions.map(e => `<li>${e}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
     // Preparation steps
     if (learn.preparation) {
       html += `
@@ -321,15 +407,71 @@ class RangerChallengeApp {
 
     // Adjust Fire (CFF)
     if (learn.adjustFire) {
+      const af = learn.adjustFire;
       html += `
         <div class="detail-section">
-          <h3 class="detail-section-title">Adjust Fire</h3>
-          <p><strong>Spotting:</strong> ${learn.adjustFire.spotting}</p>
+          <h3 class="detail-section-title">🎯 Adjust Fire — Bracketing</h3>
+          ${af.explanation ? `<p class="section-intro">${af.explanation}</p>` : ''}
+          
+          <div class="adjust-subsection">
+            <h4>Spotting</h4>
+            <p>${af.spotting}</p>
+            ${af.spottingExample ? `<div class="example"><strong>Example:</strong> ${af.spottingExample}</div>` : ''}
+          </div>
+
+          ${af.correctionFormat ? `
+            <div class="adjust-subsection">
+              <h4>Correction Format</h4>
+              <div class="example"><code>${af.correctionFormat}</code></div>
+              ${af.correctionExample ? `<div class="example"><strong>Example:</strong> <code>${af.correctionExample}</code></div>` : ''}
+            </div>
+          ` : ''}
+          
           <div class="bracket-guide">
-            <strong>Bracket Guide:</strong>
+            <h4>Bracket Guide</h4>
             <ul>
-              ${learn.adjustFire.bracketGuide.map(b => `<li>${b}</li>`).join('')}
+              ${af.bracketGuide.map(b => `<li>${b}</li>`).join('')}
             </ul>
+          </div>
+
+          ${af.keyRule ? `<div class="key-rule">${af.keyRule}</div>` : ''}
+
+          ${af.shotProcedure ? `
+            <div class="adjust-subsection">
+              <h4>Shot/Splash Procedure</h4>
+              <ol class="shot-procedure">
+                ${af.shotProcedure.map(s => `<li>${s}</li>`).join('')}
+              </ol>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    // Danger Close (CFF)
+    if (learn.dangerClose) {
+      html += `
+        <div class="detail-section danger-close-section">
+          <h3 class="detail-section-title">⚠️ DANGER CLOSE</h3>
+          <p class="danger-definition">${learn.dangerClose.definition}</p>
+          
+          <div class="danger-distances">
+            <h4>Danger Close Distances</h4>
+            <table class="distance-table">
+              <tr><th>Weapon System</th><th>Distance</th></tr>
+              ${learn.dangerClose.distances.map(d => `<tr><td>${d.weapon}</td><td>${d.distance}</td></tr>`).join('')}
+            </table>
+          </div>
+          
+          <div class="danger-procedure">
+            <h4>Procedure</h4>
+            <ol>
+              ${learn.dangerClose.procedure.map(p => `<li>${p}</li>`).join('')}
+            </ol>
+          </div>
+          
+          <div class="danger-warnings">
+            ${learn.dangerClose.warnings.map(w => `<div class="warning-item">${w}</div>`).join('')}
           </div>
         </div>
       `;
@@ -488,7 +630,6 @@ class RangerChallengeApp {
         <div class="answer-line"><span class="line-label">2nd Trans:</span> ${a.second}</div>
         <div class="answer-line"><span class="line-label">3rd Trans:</span> ${a.third}</div>
         <div class="answer-line highlight"><span class="line-label">MTO:</span> ${a.mto}</div>
-        <div class="answer-line"><span class="line-label">Direction:</span> ${a.direction}</div>
         <div class="answer-line"><span class="line-label">Adjustments:</span> ${a.adjustments}</div>
         <div class="answer-line highlight"><span class="line-label">EOM:</span> ${a.eom}</div>
       </div>

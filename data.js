@@ -618,81 +618,134 @@ const APP_DATA = {
           noGoCriteria: 'Candidate does not bracket correctly during adjustment.',
           hasLearnTestMode: true,
           learnContent: {
-            purpose: 'Request and adjust indirect fire on a target using three transmissions, then adjust to Fire-for-Effect (FFE) and report effects.',
-            preparation: [
-              'Plot/Note current position grid (MGRS - GZD)',
-              'Plot/Note enemy position grid/polar',
-              'Calculate direction in mills',
-              'Fill out CFF laminated card'
+            purpose: 'Call for Fire (CFF) is how you request and adjust indirect fire support (mortars, artillery) on enemy targets. You communicate with the Fire Direction Center (FDC) using a structured three-transmission format, then adjust rounds onto target using bracketing techniques.',
+            overview: [
+              '1. YOU observe enemy and calculate target location',
+              '2. YOU contact FDC with three transmissions',
+              '3. FDC fires adjustment round and sends "SHOT OVER"',
+              '4. YOU respond with "SHOT OUT", spot where it lands, and send corrections',
+              '5. Repeat until on target → call "FIRE FOR EFFECT"',
+              '6. Report results → "END OF MISSION"'
             ],
-            threeTransmissions: {
-              grid: [
-                {
-                  transmission: 1,
-                  name: 'Observer ID & Warning Order',
-                  example: '"FDC, THIS IS VIKING 2-1, ADJUST FIRE, OVER."'
-                },
-                {
-                  transmission: 2,
-                  name: 'Eight-digit grid to target (accurate within 250m)',
-                  example: '"GRID 16T EG 1234 5678, DIRECTION, 1 600 MILLS, OVER."'
-                },
-                {
-                  transmission: 3,
-                  name: 'Target description, Method of Engagement, Method of Fire and Control',
-                  example: '"1 x INFANTRY SQUAD IN THE OPEN, FIRE WHEN READY, OVER."'
-                }
-              ],
-              polar: [
-                {
-                  transmission: 1,
-                  name: 'Observer ID & Warning Order',
-                  example: '"FDC, THIS IS VIKING 2-1, ADJUST FIRE, POLAR, OVER."'
-                },
-                {
-                  transmission: 2,
-                  name: 'Distance and Direction to target',
-                  example: '"Distance 1000 METERS, DIRECTION, 1 600 MILLS, OVER."'
-                },
-                {
-                  transmission: 3,
-                  name: 'Target description, Method of Engagement, Method of Fire and Control',
-                  example: '"1 x INFANTRY SQUAD IN THE OPEN, FIRE WHEN READY, OVER."'
-                }
-              ]
+            preparation: [
+              'Plot your current position grid (8-digit MGRS with Grid Zone Designator)',
+              'Plot or estimate enemy position grid OR distance/direction from you',
+              'Calculate direction to target in mils (1 mil = ~1 meter at 1000m)',
+              'Have your CFF laminated card ready to reference'
+            ],
+            transmissionDetails: {
+              first: {
+                title: '1st Transmission — Observer ID & Warning Order',
+                elements: [
+                  'Call FDC: "FDC, THIS IS [your call sign]..."',
+                  'Warning Order tells FDC what type of mission:',
+                  'GRID: do not say "Grid" after adjust fire. Grid is already implied.',
+                  'POLAR: Add "POLAR" if using direction/distance instead of grid'
+                ],
+                gridExample: '"FDC, THIS IS VIKING 2-1, ADJUST FIRE, OVER."',
+                polarExample: '"FDC, THIS IS VIKING 2-1, ADJUST FIRE, POLAR, OVER."'
+              },
+              second: {
+                title: '2nd Transmission — Target Location',
+                elements: [
+                  'GRID MISSION: Give 8-digit grid with Grid Zone Designator',
+                  'Format: "GRID [GZD] [8-digit], DIRECTION [mils], OVER"',
+                  'Must be accurate within 250 meters',
+                  'POLAR MISSION: Give distance and direction FROM YOUR POSITION',
+                  'Format: "DIRECTION [mils], DISTANCE [meters], OVER"',
+                  'FDC calculates target location from your known position'
+                ],
+                gridExample: '"GRID 16T EG 1234 5678, DIRECTION 1680, OVER."',
+                polarExample: '"DIRECTION 1600, DISTANCE 1200, OVER."'
+              },
+              third: {
+                title: '3rd Transmission — Target Description & Method',
+                elements: [
+                  'TARGET DESCRIPTION: What you see (# and type of enemy)',
+                  '• "INFANTRY SQUAD IN THE OPEN"',
+                  '• "TWO TRUCKS WITH DISMOUNTS"',
+                  '• "MORTAR POSITION IN TREES"',
+                  'DANGER CLOSE: Add if friendlies within 600m of target!',
+                  'METHOD OF ENGAGEMENT (optional):',
+                  '• HE/QUICK = High Explosive with quick fuze (default)',
+                  '• WP = White Phosphorus (smoke/incendiary)',
+                  'METHOD OF FIRE & CONTROL:',
+                  '• AT MY COMMAND = You control when they fire',
+                  '• FIRE WHEN READY = FDC fires when ready (faster)'
+                ],
+                example: '"INFANTRY SQUAD IN THE OPEN, HE/QUICK, AT MY COMMAND, OVER."'
+              }
             },
-            messageToObserver: 'After your transmissions, FDC will state their Unit, # of Rounds, and Target Number. MAKE SURE YOU WRITE THE TARGET NUMBER DOWN!',
+            messageToObserver: 'After your 3 transmissions, FDC responds with Message To Observer (MTO). They tell you: Unit(s) firing, # of rounds, and TARGET NUMBER. WRITE THE TARGET NUMBER DOWN — you need it for adjustments and EOM!',
+            mtoExample: '"MESSAGE TO OBSERVER: 2 GUNS, 1 IN ADJUST, 2 IN EFFECT, TARGET AB1006, OVER."',
             adjustFire: {
-              spotting: 'For each impact, spot Right/Left and Over/Short of target.',
+              explanation: 'After each round impacts, you "spot" where it landed relative to target, then send corrections. Goal: Bracket the target (get one round short AND one round over) then split the bracket until on target.',
+              spotting: 'Look where round lands. Report: LEFT/RIGHT (deviation) and OVER/SHORT (range).',
+              spottingExample: 'Round lands 50 mils left and 300m short of target.',
+              correctionFormat: '"[LEFT/RIGHT] [mils], [ADD/DROP] [meters], OVER."',
+              correctionExample: '"RIGHT 50, ADD 400, OVER."',
               bracketGuide: [
-                '> 400 m → Add/Drop 800 m',
+                '> 400 m off → Add/Drop 800 m (start wide bracket)',
                 '> 200 and < 400 m → Add/Drop 400 m',
                 '> 100 and < 200 m → Add/Drop 200 m',
                 '< 100 m → Add/Drop 100 m',
-                'Add/Drop 50 m and announce FIRE FOR EFFECT'
+                'Split 100m bracket → Add/Drop 50 m → call FFE'
               ],
+              keyRule: '⚠️ Each correction must create OPPOSITE range spotting (if first was SHORT, correction must result in OVER). This is "successive bracketing" — failure to bracket is a NO-GO.',
               shotProcedure: [
-                'FDC: "SHOT OVER."',
-                'Observer: "SHOT OUT."',
-                'FDC: "SPLASH OVER."',
-                '*impact*',
-                'Observer: "SPLASH OUT."',
-                'Observer sends correction: "RIGHT 100, ADD 400, OVER."'
+                'FDC: "SHOT OVER." (round fired)',
+                'You: "SHOT OUT." (acknowledge)',
+                'FDC: "SPLASH OVER." (impact in 5 sec)',
+                'You: "SPLASH OUT." (you\'re watching)',
+                '*Round impacts — spot it*',
+                'You: "[correction], OVER."'
               ]
             },
-            fireForEffect: 'Enter FFE when a 100-meter bracket is split or a range-correct spotting is observed.',
-            endOfMission: '"EOM, TARGET #____, TARGET DESTROYED, ESTIMATE TWO CASUALTIES, OVER."',
+            fireForEffect: 'Call "FIRE FOR EFFECT, OVER" when: (1) You split a 100-meter bracket, OR (2) You get a range-correct spotting (round is on line with target in range).',
+            endOfMission: 'After FFE rounds impact, report results: "END OF MISSION, TARGET [number], [effect], OVER."',
+            effectsOptions: [
+              'TARGET DESTROYED — target eliminated',
+              'TARGET NEUTRALIZED — target rendered ineffective',
+              'TARGET SUPPRESSED — target temporarily unable to fight',
+              'AREA COVERAGE COMPLETE — rounds hit intended area'
+            ],
+            dangerClose: {
+              definition: 'DANGER CLOSE warns FDC that friendly forces are near the target. Required when target is within 600m (mortars/artillery) or 750m (naval guns) of friendlies.',
+              distances: [
+                { weapon: '60mm Mortar', distance: '600m' },
+                { weapon: '81mm/120mm Mortar', distance: '600m' },
+                { weapon: '105mm/155mm Artillery', distance: '600m' },
+                { weapon: 'Naval Gunfire (5")', distance: '750m' }
+              ],
+              procedure: [
+                'Add "DANGER CLOSE" in 3rd transmission after target description',
+                'Example: "INFANTRY SQUAD IN THE OPEN, DANGER CLOSE, HE/QUICK, AT MY COMMAND, OVER."',
+                'FDC will take extra precautions (reduced charge, careful calculations)'
+              ],
+              warnings: [
+                '⚠️ DANGER CLOSE is NOT optional — failure can kill friendlies',
+                '⚠️ Know YOUR position accurately before calling fires',
+                '⚠️ Maintain communication with adjacent units during mission'
+              ]
+            },
             commonErrors: [
-              'Failure to bracket (NO-GO) → Fix: force opposite-direction range spotting; apply bracket guide.',
-              'Saying UP/DOWN instead of ADD/DROP'
+              'Not bracketing (NO-GO) — must force opposite range spotting each correction',
+              'Saying UP/DOWN instead of ADD/DROP',
+              'Forgetting to write down TARGET NUMBER from MTO',
+              'Not announcing DANGER CLOSE when required',
+              'Giving corrections in mils for range (must be meters)'
             ],
             pocketCard: [
-              '1 Observer ID & Warning Order',
-              '2 LOCATION (≤250 m accuracy)',
-              '3 Target Desc / Method of Fire & Control',
-              'MTO: Acknowledge & record target number',
-              'ADJUST: Bracket Guide: >400→±800; >200<400→±400; >100<200→±200; <100→±100; ±50 → FFE',
-              'FFE → EOM, TARGET #____, [effects], OVER'
+              '=== THREE TRANSMISSIONS ===',
+              '1. "[FDC], THIS IS [call sign], ADJUST FIRE, OVER."',
+              '2. "GRID [GZD] [8-digit], DIRECTION [mils], OVER."',
+              '3. "[Target], [DANGER CLOSE], [method], OVER."',
+              '=== ADJUSTMENT ===',
+              'Bracket: >400→±800 | >200→±400 | >100→±200 | <100→±100 | ±50→FFE',
+              '"[L/R mils], [ADD/DROP meters], OVER."',
+              '=== WRAP UP ===',
+              '"FIRE FOR EFFECT, OVER."',
+              '"EOM, TARGET #____, [effect], OVER."'
             ]
           },
           testScenarios: [
